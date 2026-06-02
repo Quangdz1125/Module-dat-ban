@@ -1,4 +1,4 @@
-package model;
+package model.booking;
 import java.io.Serializable;
 
 public class Client implements Serializable {

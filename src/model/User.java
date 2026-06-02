@@ -19,4 +19,14 @@ public class User implements Serializable {
     public void setName(String name) { this.name = name; }
     public String getPosition() { return position; }
     public void setPosition(String position) { this.position = position; }
+
+    public User(String username, String password, String fullName, String position) {
+        super();
+        this.username = username;
+        this.password = password;
+        this.name = fullName;
+        this.position = position;
+    }
+    public String getFullName() { return name; }
+    public void setFullName(String fullName) { this.name = fullName; }
 }

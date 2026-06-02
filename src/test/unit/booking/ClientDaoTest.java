@@ -1,10 +1,10 @@
-package test.unit;
+package test.unit.booking;
 
 import java.util.ArrayList;
 import org.junit.Assert;
 import org.junit.Test;
-import dao.ClientDAO;
-import model.Client;
+import dao.booking.ClientDAO;
+import model.booking.Client;
 
 public class ClientDaoTest {
     ClientDAO cd = new ClientDAO();

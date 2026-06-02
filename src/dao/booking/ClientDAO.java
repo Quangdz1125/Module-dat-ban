@@ -1,9 +1,10 @@
-package dao;
+package dao.booking;
+import dao.DAO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import model.Client;
+import model.booking.Client;
 
 public class ClientDAO extends DAO {
     public ClientDAO() {

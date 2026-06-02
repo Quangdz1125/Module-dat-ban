@@ -6,6 +6,7 @@ public class Table implements Serializable {
     private String name;
     private int capacity;
     private String des;
+    private String type;
     
     public Table() {
         super();
@@ -25,4 +26,9 @@ public class Table implements Serializable {
     public void setCapacity(int capacity) { this.capacity = capacity; }
     public String getDes() { return des; }
     public void setDes(String des) { this.des = des; }
+
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
+    public String getDescription() { return des; }
+    public void setDescription(String description) { this.des = description; }
 }

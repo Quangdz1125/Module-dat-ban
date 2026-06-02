@@ -1,4 +1,4 @@
-package test.unit;
+package test.unit.booking;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -7,12 +7,12 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import org.junit.Assert;
 import org.junit.Test;
-import dao.BookingDAO;
+import dao.booking.BookingDAO;
 import dao.DAO;
 import dao.TableDAO;
 import model.BookedTable;
-import model.Booking;
-import model.Client;
+import model.booking.Booking;
+import model.booking.Client;
 import model.Table;
 import model.User;
 

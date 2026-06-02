@@ -1,8 +1,10 @@
-package dao;
+package dao.booking;
+import model.booking.Client;
+import dao.DAO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import model.Booking;
+import model.booking.Booking;
 import model.BookedTable;
 
 public class BookingDAO extends DAO {
@@ -93,7 +95,7 @@ public class BookingDAO extends DAO {
                 Booking b = new Booking();
                 b.setId(rs.getInt("id"));
                 
-                model.Client c = new model.Client();
+                model.booking.Client c = new model.booking.Client();
                 c.setName(rs.getString("clientName"));
                 b.setClient(c);
                 
@@ -127,5 +129,19 @@ public class BookingDAO extends DAO {
             e.printStackTrace();
         }
         return null;
+    }
+    public int getFirstTableIdByBooking(int bookingId) {
+        String sql = "SELECT tableId FROM tblBookedTable WHERE bookingId = ? LIMIT 1";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, bookingId);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()) {
+                return rs.getInt("tableId");
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 }

@@ -1,4 +1,6 @@
-package model;
+package model.booking;
+import model.User;
+import model.BookedTable;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;

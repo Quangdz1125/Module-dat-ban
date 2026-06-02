@@ -1,5 +1,7 @@
-package view.booking;
+package view;
 
+import view.booking.*;
+import view.payment.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -10,26 +12,26 @@ public class ReceptionistHomeFrm extends JFrame implements ActionListener {
     private User user;
 
     public ReceptionistHomeFrm(User user) {
-        super("Receptionist Home");
+        super("Trang Chủ Lễ Tân");
         this.user = user;
 
         JPanel pnMain = new JPanel();
         pnMain.setLayout(new BoxLayout(pnMain, BoxLayout.Y_AXIS));
         pnMain.add(Box.createRigidArea(new Dimension(0, 20)));
 
-        JLabel lblHome = new JLabel("Receptionist Home: " + user.getName());
+        JLabel lblHome = new JLabel("Trang Chủ Lễ Tân: " + user.getName());
         lblHome.setAlignmentX(Component.CENTER_ALIGNMENT);
         lblHome.setFont(lblHome.getFont().deriveFont(20.0f));
         pnMain.add(lblHome);
         pnMain.add(Box.createRigidArea(new Dimension(0, 20)));
 
-        btnBooking = new JButton("Đặt bàn");
+        btnBooking = new JButton("Đặt Bàn");
         btnBooking.setAlignmentX(Component.CENTER_ALIGNMENT);
         btnBooking.addActionListener(this);
         pnMain.add(btnBooking);
         pnMain.add(Box.createRigidArea(new Dimension(0, 10)));
 
-        btnManageBooking = new JButton("Manage Bookings");
+        btnManageBooking = new JButton("Quản Lý Đặt Bàn");
         btnManageBooking.setAlignmentX(Component.CENTER_ALIGNMENT);
         btnManageBooking.addActionListener(this);
         pnMain.add(btnManageBooking);
@@ -51,14 +53,10 @@ public class ReceptionistHomeFrm extends JFrame implements ActionListener {
         }
     }
 
-    // Main method added for testing/running the UI standalone
     public static void main(String[] args) {
-        // Create a dummy user to bypass login
         User dummyUser = new User();
         dummyUser.setId(1);
         dummyUser.setName("Receptionist Admin");
-
-        // Start the UI safely
         SwingUtilities.invokeLater(() -> {
             new ReceptionistHomeFrm(dummyUser).setVisible(true);
         });
